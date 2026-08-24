@@ -1,0 +1,88 @@
+<main class="login-page">
+  <section class="brand-panel" aria-label="Marketplace introduction">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <span>Marketly</span>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">SELL SMARTER. GROW FASTER.</p>
+      <h1>Your marketplace,<br /><em>all in one place.</em></h1>
+      <p class="hero-description">
+        Manage products, orders, customers and insights from one beautiful
+        workspace.
+      </p>
+    </div>
+    <div class="benefit-list">
+      <div class="benefit">
+        <span class="check">✓</span> Real-time order management
+      </div>
+      <div class="benefit">
+        <span class="check">✓</span> Powerful sales analytics
+      </div>
+      <div class="benefit">
+        <span class="check">✓</span> Built for growing teams
+      </div>
+    </div>
+    <div class="panel-shape shape-one"></div>
+    <div class="panel-shape shape-two"></div>
+  </section>
+
+  <section class="login-panel">
+    <div class="login-content">
+      <div class="mobile-brand brand">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <span>Marketly</span>
+      </div>
+      <div class="welcome-copy">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h2>Sign in to your account</h2>
+        <p>Enter your details to access your marketplace dashboard.</p>
+      </div>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label for="email">Email address</label>
+        <div>
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+              id="email"
+              type="email"
+              placeholder="you@company.com"
+              autocomplete="email"
+              matInput
+              formControlName="email"
+            />
+          </mat-form-field>
+        </div>
+        <div class="label-row">
+          <label for="password">Password</label
+          ><a routerLink="/forgot-password">Forgot password?</a>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+              matInput
+              placeholder="Enter Password"
+              type="password"
+              formControlName="password"
+            />
+          </mat-form-field>
+        </div>
+
+        <button class="sign-in" type="submit" [disabled]="isSubmitting">
+          {{ isSubmitting ? "Signing in..." : "Sign in" }} <span>→</span>
+        </button>
+      </form>
+      @if (errorMessage) {
+        <p class="form-error" role="alert">{{ errorMessage }}</p>
+      }
+      <div class="divider"><span>OR CONTINUE WITH</span></div>
+      <div class="social-buttons">
+        <button type="button"><span class="google-g">G</span>Google</button
+        ><button type="button">
+          <span class="microsoft-icon"><i></i><i></i><i></i><i></i></span
+          >Microsoft
+        </button>
+      </div>
+      <p class="signup">New to Marketly? <a href="#">Create an account</a></p>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,34 @@
+<div class="container p-5">
+    <h1>Add Permission</h1>
+    <div class="permission-form">
+        <form [formGroup]="permissionForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field appearance="outline" class="w-100">
+                 <mat-label>Module</mat-label>
+                 <mat-select formControlName="module">
+                    <mat-option *ngFor="let module of modulesList" [value]="module">
+                        {{module}}
+                    </mat-option>
+                 </mat-select>
+                </mat-form-field>
+            </div>
+
+              <div>
+                <mat-form-field appearance="outline" class="w-100">
+                    <input matInput type="text"  placeholder="Enter  Name" formControlName="name"/>
+                </mat-form-field>
+            </div>
+
+              <div>
+                <mat-form-field appearance="outline" class="w-100">
+                    <input matInput type="text"  placeholder="Enter Slug" formControlName="slug"/>
+                </mat-form-field>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center">
+                <button mat-button>{{permit ? 'update':'submit'}}</button>
+                 <button mat-button mat-dialog-close>Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

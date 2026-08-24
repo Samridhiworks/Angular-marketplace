@@ -1,0 +1,116 @@
+<main class="register-page">
+  <section class="brand-panel" aria-label="Marketplace introduction">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">&#10022;</div>
+      <span>Marketly</span>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">SELL SMARTER. GROW FASTER.</p>
+      <h1>Your marketplace,<br /><em>all in one place.</em></h1>
+      <p class="hero-description">
+        Manage products, orders, customers and insights from one beautiful
+        workspace.
+      </p>
+    </div>
+    <div class="benefit-list">
+      <div class="benefit">
+        <span class="check">&#10003;</span> Real-time order management
+      </div>
+      <div class="benefit">
+        <span class="check">&#10003;</span> Powerful sales analytics
+      </div>
+      <div class="benefit">
+        <span class="check">&#10003;</span> Built for growing teams
+      </div>
+    </div>
+    <div class="panel-shape shape-one"></div>
+    <div class="panel-shape shape-two"></div>
+  </section>
+
+  <section class="register-panel">
+    <div class="register-content">
+      <div class="mobile-brand brand">
+        <div class="brand-mark" aria-hidden="true">&#10022;</div>
+        <span>Marketly</span>
+      </div>
+      <div class="welcome-copy">
+        <p class="eyebrow">GET STARTED</p>
+        <h2>Create your account</h2>
+        <p>Enter your details to set up your marketplace workspace.</p>
+      </div>
+
+      <form
+        class="register-form"
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="form-field">
+          <label for="fullName">Full name</label>
+          <mat-form-field appearance="outline" class="w-100"
+            ><input
+              id="fullName"
+              matInput
+              placeholder="Enter full Name"
+              type="text"
+              autocomplete="name"
+              formControlName="fullName"
+          /></mat-form-field>
+        </div>
+        <div class="form-field">
+          <label for="email">Email address</label>
+          <mat-form-field appearance="outline" class="w-100"
+            ><input
+              id="email"
+              matInput
+              placeholder="Enter Email"
+              type="email"
+              autocomplete="email"
+              formControlName="email"
+          /></mat-form-field>
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <mat-form-field appearance="outline" class="w-100"
+            ><input
+              id="password"
+              matInput
+              placeholder="Enter Password"
+              type="password"
+              autocomplete="new-password"
+              formControlName="password"
+          /></mat-form-field>
+        </div>
+        <div class="field-row">
+          <div class="form-field">
+            <label for="phone">Ph No</label>
+            <mat-form-field appearance="outline" class="w-100"
+              ><input
+                id="phone"
+                matInput
+                placeholder="Enter Ph No"
+                type="number"
+                formControlName="phone"
+            /></mat-form-field>
+          </div>
+          <div class="form-field">
+            <label for="countryId">Country Code</label>
+            <mat-form-field appearance="outline" class="w-100"
+              ><input
+                id="countryId"
+                matInput
+                placeholder="Enter Country Code"
+                type="number"
+                formControlName="countryId"
+            /></mat-form-field>
+          </div>
+        </div>
+        <button class="create-account" type="submit">
+          Create account <span>&rarr;</span>
+        </button>
+      </form>
+      <p class="signin-link">
+        Already have an account? <a routerLink="/login">Sign in</a>
+      </p>
+    </div>
+  </section>
+</main>

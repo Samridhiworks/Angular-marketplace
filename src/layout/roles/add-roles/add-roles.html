@@ -1,0 +1,69 @@
+<div class="container p-3">
+  <h1>Add Roles</h1>
+  <div class="add-user">
+    <form [formGroup]="addRoles" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <input type="text"
+              matInput
+              placeholder="Enter Role Name"
+              formControlName="name"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <input type="text" matInput placeholder="Enter Slug" formControlName="slug" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <input type="text" matInput placeholder="Enter description"  formControlName="description" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+              matInput
+              placeholder="Enter level"
+              formControlName="level" type="text"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+             <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Role</mat-label>
+            <select matNativeControl required formControlName="role">
+              <option value="Vendor">Vendor</option>
+              <option value="Customer">Customer</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Status</mat-label>
+            <select matNativeControl required formControlName="status">
+              <option value="active">ACTIVE</option>
+              <option value="saab">INACTIVE</option>
+            </select>
+          </mat-form-field>
+        </div>
+      </div> -->
+
+      <div class="d-flex gap-3 justify-content-center">
+        <button mat-button>Add Role</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

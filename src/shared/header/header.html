@@ -1,0 +1,54 @@
+<header class="top-header mat-elevation-z5" [class.hidden]="toggleSearch" [ngClass]="{'test' : getSideBarSate()}">
+  <div class="flex-grow-1 gap-1 d-flex align-items-center">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon class="material-icons-outlined">menu</mat-icon>
+    </button>
+    <span class="header-title">Marketplace admin</span>
+  </div>
+
+  <div class="d-flex align-items-center gap-1">
+   
+
+   
+    <mat-menu #Notification class="rounded-4 dropdown-notification">
+      <button mat-menu-item>
+        <mat-icon class="material-icons-outlined text-red">shopping_cart</mat-icon>
+        <span>New Sale from Gumroad</span>
+      </button>
+
+      <div class="mx-3 my-2">
+        <button mat-raised-button color="primary" class="rounded-4 w-100">View All</button>
+      </div>
+    </mat-menu>
+
+   
+
+   
+    <button mat-button class="profile-box" [matMenuTriggerFor]="UserProfile" [matMenuTriggerRestoreFocus]="false">
+
+      <span class="profile-name">
+        LogOut
+        <mat-icon class="arrow-icon">expand_more</mat-icon>
+      </span>
+    </button>
+
+    <!-- DROPDOWN MENU -->
+    <mat-menu #UserProfile="matMenu" class="profile-menu" backdropClass="menu-backdrop">
+      
+     
+
+      <mat-divider></mat-divider>
+
+      <div class="menu-title">Switch to other</div>
+   
+      <button mat-menu-item  (click)="logout()">
+        <mat-icon>logout</mat-icon> Log out
+      </button>
+
+    </mat-menu>
+
+  </div>
+</header>
+
+
+

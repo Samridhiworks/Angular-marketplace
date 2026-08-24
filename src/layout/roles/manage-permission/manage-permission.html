@@ -1,0 +1,59 @@
+<div class="permission-dialog p-5">
+  <mat-dialog-content>
+    <div class="dialog-header">
+      <h2>Manage Permissions - {{ roleName }}</h2>
+
+      <button mat-icon-button type="button" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="dialog-body">
+      <div>
+        <div class="permission-module" *ngFor="let module of permissionModules">
+          <!-- MODULE NAME -->
+
+          <h3>
+            {{ module.name || module.module }}
+          </h3>
+
+          <!-- PERMISSIONS -->
+
+          <div
+            class="permission-item"
+            *ngFor="let permission of module.permissions"
+          >
+            <mat-checkbox
+              [checked]="isPermissionSelected(permission.id)"
+              (change)="togglePermission(permission.id, $event.checked)"
+            >
+              {{ permission.name }}
+            </mat-checkbox>
+          </div>
+        </div>
+
+        <!-- NO PERMISSIONS -->
+
+        <div class="no-permissions" *ngIf="permissionModules.length === 0">
+          No permissions found.
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="dialog-footer">
+      <button mat-stroked-button type="button" mat-dialog-close>Cancel</button>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="button"
+        (click)="savePermissions()"
+        [disabled]="saving || loadingRolePermissions"
+      >
+        {{ saving ? "Saving..." : "Save Permissions" }}
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>

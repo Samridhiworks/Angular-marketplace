@@ -1,0 +1,286 @@
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: linear-gradient(180deg, #0b1220, #0e1a2b);
+  color: #cbd5e1;
+  overflow-y: auto;
+  z-index: 10;
+
+  /* ===== HEADER ===== */
+  .sidebar-header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: #0b1220;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    img {
+      filter: brightness(1.2);
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #e2e8f0;
+    }
+  }
+
+  /* // .sidebar-menu {
+  //   margin-top: 65px;
+  // } */
+
+  mat-icon {
+    font-size: 20px;
+    color: #94a3b8;
+  }
+
+  /* ===== EXPANSION HEADER ===== */
+  ::ng-deep .mat-expansion-panel {
+    background: transparent !important;
+    color: inherit;
+  }
+
+  ::ng-deep .mat-expansion-panel-header {
+    height: 48px !important;
+    padding: 0 18px !important;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+  }
+
+  ::ng-deep .mat-expansion-panel-header:hover {
+    background: rgba(56, 189, 248, 0.08);
+  }
+
+  /* ACTIVE PARENT */
+  ::ng-deep .panel-active > .mat-expansion-panel-header {
+    background: linear-gradient(90deg, #1fdeff 0%, #079dbd 100%);
+    border-left: 4px solid #38bdf8;
+    color: #020617 !important;
+  }
+
+  ::ng-deep .panel-active > .mat-expansion-panel-header mat-icon {
+    color: #020617 !important;
+  }
+
+  /* ===== SUB MENU ===== */
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+  }
+
+  ::ng-deep .mat-nav-list .mat-list-item {
+    height: 42px;
+    padding-left: 48px !important;
+    color: #94a3b8;
+    font-size: 13px;
+    transition: all 0.3s ease;
+  }
+
+  ::ng-deep .mat-nav-list .mat-list-item:hover {
+    background: rgba(56, 189, 248, 0.08);
+    color: #e2e8f0;
+  }
+
+  /* ACTIVE CHILD */
+  ::ng-deep .mat-nav-list .mat-list-item.is-active {
+    background: rgba(56, 189, 248, 0.18);
+    color: #38bdf8;
+    border-left: 4px solid #38bdf8;
+  }
+
+  ::ng-deep .mat-nav-list .mat-list-item.is-active mat-icon {
+    color: #38bdf8;
+  }
+
+  /* REMOVE DEFAULT PADDING */
+  ::ng-deep .mat-list-base {
+    padding-top: 0 !important;
+  }
+}
+
+/* MINI SIDEBAR */
+.sidebar-wrapper.mini-sidebar {
+  left: -260px !important;
+}
+
+@media (max-width: 1024px) {
+  /* On small screens the default state is closed. The menu button sets
+     .mini-sidebar, which is the open state for mobile. */
+  .sidebar-wrapper {
+    left: -260px;
+  }
+
+  .sidebar-wrapper.mini-sidebar {
+    left: 0 !important;
+  }
+}
+
+::ng-deep .mat-expansion-indicator::after {
+  color: #94a3b8;
+}
+
+::ng-deep .panel-active .mat-expansion-indicator::after {
+  color: #020617;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  background: rgba(2, 6, 23, 0.6);
+  border-left: 4px solid #38bdf8;
+}
+
+::ng-deep .mat-nav-list .mat-list-item {
+  color: #cbd5e1 !important;
+}
+
+::ng-deep .mat-nav-list .mat-list-item mat-icon {
+  color: #38bdf8;
+}
+
+::ng-deep .mat-nav-list .mat-list-item.is-active {
+  background: linear-gradient(90deg, rgba(31, 222, 255, 0.25), transparent);
+  color: #1fdeff !important;
+  border-left: 4px solid #1fdeff;
+}
+
+::ng-deep .sidebar-wrapper > .sidebar-menu > mat-nav-list .mat-list-item {
+  height: 48px;
+  padding-left: 18px !important;
+  color: #cbd5e1 !important;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .sidebar-wrapper > .sidebar-menu > mat-nav-list .mat-list-item:hover {
+  background: rgba(56, 189, 248, 0.08);
+  color: #e2e8f0 !important;
+}
+
+::ng-deep
+  .sidebar-wrapper
+  > .sidebar-menu
+  > mat-nav-list
+  .mat-list-item
+  mat-icon {
+  color: #38bdf8;
+}
+
+::ng-deep
+  .sidebar-wrapper
+  > .sidebar-menu
+  > mat-nav-list
+  .mat-list-item.is-active {
+  background: linear-gradient(90deg, rgba(31, 222, 255, 0.25), transparent);
+  border-left: 4px solid #1fdeff;
+  color: #1fdeff !important;
+}
+
+::ng-deep
+  .sidebar-wrapper
+  > .sidebar-menu
+  > mat-nav-list
+  .mat-list-item.is-active
+  mat-icon {
+  color: #1fdeff;
+}
+
+::ng-deep.mdc-list-item__primary-text {
+  color: rgb(203 213 225) !important;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  vertical-align: middle;
+  color: rgb(203 213 225) !important;
+}
+
+.dashboard-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 18px;
+  align-items: center;
+  margin: 8px 0px;
+  cursor: pointer;
+}
+
+.panel-active {
+  background: #f7f7f7;
+  padding: 10px 18px;
+  color: #2b2e2f;
+}
+
+/* Marketly admin theme */
+.sidebar-wrapper {
+  width: 260px;
+  background: #103e32;
+  color: #dcebe3;
+  box-shadow: 8px 0 24px rgba(12, 51, 39, 0.08) !important;
+}
+.sidebar-wrapper .sidebar-header {
+  height: 72px;
+  padding: 0 22px;
+  background: #103e32;
+  border-bottom-color: rgba(227, 240, 119, 0.18);
+}
+.sidebar-header img {
+  display: none;
+}
+.marketly-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+.marketly-logo .brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  color: #103e32;
+  background: #e3f077;
+  font-size: 18px;
+}
+.dashboard-btn {
+  min-height: 44px;
+  margin: 4px 0;
+  padding: 0 18px;
+  border-left: 3px solid transparent;
+  border-radius: 0 8px 8px 0;
+  color: #cee0d7;
+  transition: 0.2s;
+}
+.dashboard-btn:hover {
+  background: rgba(229, 242, 121, 0.09);
+  color: #fff;
+}
+.dashboard-btn mat-icon {
+  color: #9ec6b3 !important;
+}
+.dashboard-btn.panel-active {
+  padding: 0 18px;
+  border-left-color: #e3f077;
+  background: rgba(229, 242, 121, 0.14);
+  color: #fff;
+}
+.dashboard-btn.panel-active mat-icon {
+  color: #e3f077 !important;
+}
+::ng-deep .sidebar-wrapper .mdc-list-item__primary-text {
+  color: inherit !important;
+}

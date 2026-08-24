@@ -1,0 +1,51 @@
+<div class="verify-email">
+  <div class="verify-icon" aria-hidden="true">&#10022;</div>
+  <div class="verify-heading">
+    <p class="eyebrow">ONE LAST STEP</p>
+    <h2>Verify your email</h2>
+    <p>We sent a verification code to your registered email address.</p>
+  </div>
+
+  <form class="verify-form" [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="email">Email address</label>
+        <mat-form-field class="w-100" appearance="outline">
+          <input
+            id="email"
+            matInput
+            type="email"
+            placeholder="Enter email"
+            formControlName="email"
+            readonly
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <div class="label-row">
+          <label for="otp">Verification code</label>
+          <button class="resend-button" type="button" (click)="sendOtp()" [disabled]="isSendingOtp">
+            {{ isSendingOtp ? "Sending..." : "Resend OTP" }}
+          </button>
+        </div>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            id="otp"
+            matInput
+            type="text"
+            inputmode="numeric"
+            placeholder="Enter OTP"
+            formControlName="otp"
+          />
+        </mat-form-field>
+        @if (otpMessage) {
+          <p class="form-message success-message">{{ otpMessage }}</p>
+        }
+      </div>
+
+      <button class="verify-button" type="submit" [disabled]="isSubmitting">{{ isSubmitting ? "Verifying..." : "Verify email" }} <span>&rarr;</span></button>
+      @if (errorMessage) {
+        <p class="form-message error-message" role="alert">{{ errorMessage }}</p>
+      }
+  </form>
+</div>
