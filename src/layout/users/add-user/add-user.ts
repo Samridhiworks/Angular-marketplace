@@ -5,11 +5,11 @@ import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatAnchor } from "@angular/material/button";
 import { Api } from '../../../services/api';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-user',
-  imports: [MatFormFieldModule, CommonModule, MatInputModule, ReactiveFormsModule, MatAnchor],
+  imports: [MatFormFieldModule, CommonModule, MatInputModule, ReactiveFormsModule, MatAnchor, MatDialogClose],
   templateUrl: './add-user.html',
   styleUrl: './add-user.css',
 })
@@ -49,7 +49,7 @@ export class AddUser {
   onSubmit(){
     const payload = this.addUser.value
  
-    if(this.user.invalid){
+    if(this.addUser.invalid){
       this.addUser.markAllAsTouched();
       return;
     }
